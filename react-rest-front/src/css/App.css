@@ -1,0 +1,70 @@
+body {
+}
+
+
+.bg-inverse {
+  background-color: #292b2c !important;
+}
+
+.btn-outline-info {
+  color: #5bc0de;
+  border-color: #5bc0de;
+  background-color: transparent;
+}
+
+.form-inline{
+  text-align: right;
+}
+
+.chart-container {
+  position: relative;
+  margin: auto;
+  height: 50vh;
+  width: 99vw;
+}
+
+.chart{
+  height:100%;
+}
+
+.placeholder{
+  margin-left:4%;
+  margin-top:3%;
+}
+
+.todaysWeatherBox{
+  border:solid;
+  border-color:salmon;
+}
+
+.todaysWeatherRow{
+  border:solid;
+  border-color:red;
+}
+
+.todaysWeatherPlaceholder{
+  border:solid;
+  border-color:blue;
+}
+
+.card{
+  display: flex;
+  border:solid;
+}
+
+.fiveDay:{
+  border:solid;
+}
+
+.weather-Icon {
+  height: 200px;
+}
+
+.center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3%;
+}
+
+

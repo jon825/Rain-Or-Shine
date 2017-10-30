@@ -1,0 +1,22 @@
+{
+  "name": "weather_app",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "axios": "^0.16.2",
+    "chart.js": "^2.7.0",
+    "react": "^15.6.2",
+    "react-chartjs-2": "^2.6.4",
+    "react-dom": "^15.6.2",
+    "react-thermometer": "0.0.3"
+  },
+  "devDependencies": {
+    "react-scripts": "1.0.7"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
