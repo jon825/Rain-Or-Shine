@@ -1,6 +1,3 @@
-body {
-}
-
 
 .bg-inverse {
   background-color: #292b2c !important;
@@ -28,43 +25,40 @@ body {
 }
 
 .placeholder{
-  margin-left:4%;
-  margin-top:3%;
-}
+/*  margin-left:4%;
+*//*  margin-top:3%;
+*/}
 
-.todaysWeatherBox{
+.weatherInfo{
   border:solid;
   border-color:salmon;
 }
 
-.todaysWeatherRow{
-  border:solid;
-  border-color:red;
+
+.todaysWeather{
+
 }
 
-.todaysWeatherPlaceholder{
-  border:solid;
-  border-color:blue;
+.weatherDisplay{
+  margin-top:20px;
 }
 
 .card{
-  display: flex;
-  border:solid;
+  /*display: flex;*/
+  border:none !important;
+  float:left;
+  margin-left:200px;
 }
 
-.fiveDay:{
-  border:solid;
-}
+
 
 .weather-Icon {
   height: 200px;
 }
 
-.center-block {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 3%;
+.card-text{
+  text-align: center;
 }
+
 
 

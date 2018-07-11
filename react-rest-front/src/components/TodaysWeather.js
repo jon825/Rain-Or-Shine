@@ -17,32 +17,29 @@ class TodaysWeather extends Component {
     if(weatherMain === ""){
     }
     return (
-
-          <div className="block placeholder todaysWeatherPlaceholder">
-            <div className="row">
-              <h2>{date}</h2>
-            </div>
-            <div className="row">
-              <i className={img_icon}> </i>
-            </div>
-            <div className="row">
-              <h1>
-                {city}, {country}
-              </h1>
-            </div>
-            <div className="row">
-              <p>Temperature: {weatherTemp} °C</p>
-            </div>
-            <div className="row">
-              <p>Today's Weather: {weatherDescription}</p>
-            </div>
-            <div className="row">
-              <p>Last updated: {time}</p>
-            </div>
-
+      <div className="container">
+        <div className="row">
+          <h2>{date}</h2>
+        </div>
+        <div className="row">
+          <i className={img_icon}> </i>
+        </div>
+        <div className="row">
+          <h1>
+            {city}, {country}
+          </h1>
+        </div>
+        <div className="row">
+          <p>Temperature: {weatherTemp} °C</p>
+        </div>
+        <div className="row">
+          <p>Today's Weather: {weatherDescription}</p>
+        </div>
+        <div className="row">
+          <p>Last updated: {time}</p>
+        </div>
       </div>
     );
   }
 }
-
 export default TodaysWeather;

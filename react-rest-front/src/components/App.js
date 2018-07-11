@@ -84,44 +84,56 @@ class App extends Component {
     let forecastData = this.state.FiveDayForecast;
     let forecastCard;
     if (!forecastData.length == 0) {
-
-    forecastCard = forecastData.map((data)=>{
-      return <ForecastCard weather={data.weather[0].main} temp={data.main.temp}/>
-    })
-  }
-    console.log(forecastData)
+      forecastCard = forecastData.map(data => {
+        return (
+          <ForecastCard icon={data.weather[0].id} temp={data.main.temp} date={data.dt_txt.slice(0, 4)} dayOrnight={data.weather[0].icon.slice(-1)}/>
+        );
+      });
+    }
+    console.log(forecastData);
     console.log(forecastCard);
     return (
+      <div>
       <div className="container-fluid">
+        <div className="row">
         <Search
           handleTextChange={this.handleTextChange}
           submit_button={this.submit_button}
           text={this.state.newText}
         />
-
-        <div className="container-fluid todaysWeatherBox">
-          <div className="row todaysWeatherRow">
-            <TodaysWeather
-              weatherDescription={this.state.todaysWeather.weatherDescription}
-              weatherMain={this.state.todaysWeather.weatherMain}
-              weatherTemp={this.state.todaysWeather.weatherTemp}
-              city={this.state.todaysWeather.city}
-              country={this.state.todaysWeather.country}
-              icon={this.state.todaysWeather.icon}
-              date={this.state.todaysWeather.date}
-              dayOrnight={this.state.todaysWeather.dayOrnight}
-              time={this.state.todaysWeather.time}
-            />
-            <FiveDayForecast
-              card={forecastCard}
-              />
-
-          </div>
         </div>
+        </div>
+        <div className="container-fluid">
+          <div className="row weatherDisplay">
+            <div className="col-lg-3 todaysWeather">
+              <TodaysWeather
+                weatherDescription={this.state.todaysWeather.weatherDescription}
+                weatherMain={this.state.todaysWeather.weatherMain}
+                weatherTemp={this.state.todaysWeather.weatherTemp}
+                city={this.state.todaysWeather.city}
+                country={this.state.todaysWeather.country}
+                icon={this.state.todaysWeather.icon}
+                date={this.state.todaysWeather.date}
+                dayOrnight={this.state.todaysWeather.dayOrnight}
+                time={this.state.todaysWeather.time}
+              />
+            </div>
+            <div className="col-lg-9">
+              <div className="fiveDayCard">
+                <FiveDayForecast
+                  card={forecastCard}
+
+                />
+              </div>
+            </div>
+          </div>
+        <div className="row">
         <FiveDayForecastChart
           forecastData={forecastData}
           text={this.state.newText}
         />
+        </div>
+      </div>
       </div>
     );
   }

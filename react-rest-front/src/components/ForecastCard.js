@@ -1,16 +1,26 @@
 import React, { Component } from "react";
+import "../css/App.css";
+import "../css/owfont-regular.css";
 
 class ForecastCard extends Component{
 
 render(){
   let temp = this.props.temp;
+  let date = this.props.date;
+  let icon = this.props.icon;
+  let dayOrnight = this.props.dayOrnight;
+  let img_icon = "owf owf-" + icon + "-" + dayOrnight + " " + "owf-5x";
+
+
     return(
       <div className="card">
-        <img className="card-img-top" src="..." alt="Card image cap" />
         <div className="card-block">
-          <h4 className="card-title">{temp}</h4>
-          <p className="card-text">
-          </p>
+          <p className="card-text">{date} </p>
+
+
+          <i className={img_icon}> </i>
+
+          <p className="card-text">{temp} °C</p>
         </div>
       </div>
 

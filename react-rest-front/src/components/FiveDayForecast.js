@@ -5,7 +5,7 @@ class FiveDayForecast extends Component{
 render(){
 
     return(
-      <div className="fiveDay">
+      <div>
         {this.props.card}
 
       </div>

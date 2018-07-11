@@ -19,20 +19,20 @@ app.use(function(req, res, next) {
 app.get("/", (req, res) => {
   let city = "toronto";
   currentWeather(city, weather => {
-    fiveDayForcast(city, forecast=>{
-      let data = {weather, forecast};
+    fiveDayForcast(city, forecast => {
+      let data = { weather, forecast };
       res.json(data);
-    })
-  })
-})
+    });
+  });
+});
 
 app.post("/result", (req, res) => {
   let cityName = req.body.city;
   currentWeather(cityName, weather => {
-    fiveDayForcast(cityName, forecast =>{
-      let data = {weather, forecast};
+    fiveDayForcast(cityName, forecast => {
+      let data = { weather, forecast };
       res.json(data);
-    })
+    });
   });
 });
 
@@ -46,15 +46,11 @@ function currentWeather(city, callback) {
     .get(mainURL + "weather?q=" + city + "&units=metric&APPID=" + API)
     .then(response => {
       let data = response.data;
-      data.dt = {date: dateConverter(data.dt), time: timeConverter(data.dt)};
+      data.dt = { date: dateConverter(data.dt), time: timeConverter(data.dt) };
       data.sys.country = getCountryName(data.sys.country);
-
       callback(data);
     });
 }
-
-
-
 
 function fiveDayForcast(city, callback) {
   axios
@@ -62,17 +58,20 @@ function fiveDayForcast(city, callback) {
     .then(response => {
       let data = response.data;
       let fiveDayForcastData = data.list;
+      console.log(fiveDayForcastData)
+      //
+
       //this is the array of my data;
       //each element has an object which displays the time of the weather;
       //must filter out all the data of each day with closest current time;
       let fiveDayForecastArray = [];
       // must filter out the ones with the same time as last
-
       for (let i = 1; i < fiveDayForcastData.length; i++) {
-
-        fiveDayForcastData[i].dt_txt = filterDates(`${fiveDayForcastData[i].dt_txt} UTC`);
+        fiveDayForcastData[i].dt_txt = filterDates(
+          `${fiveDayForcastData[i].dt_txt} UTC`
+        );
         if (i % 8 == 6) {
-          fiveDayForecastArray.push(fiveDayForcastData[i])
+          fiveDayForecastArray.push(fiveDayForcastData[i]);
         }
       }
       callback(fiveDayForecastArray);

@@ -13,7 +13,7 @@ class Search extends Component {
               <input
                 className="form-control mr-sm-2"
                 type="text"
-                placeholder="eg: Toronto, city"
+                placeholder="eg: City"
                 onChange={this.props.handleTextChange}
               />
               <button
